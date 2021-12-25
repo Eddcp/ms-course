@@ -28,9 +28,6 @@ public class WorkerResource {
 
     private final WorkerRepository repository;
 
-    @Value("${test.config}")
-    private String testConfig;
-
     @GetMapping
     public ResponseEntity<List<Worker>> findAll() {
         List<Worker> list = repository.findAll();
@@ -47,7 +44,7 @@ public class WorkerResource {
 
     @GetMapping(value = "/configs")
     public ResponseEntity<Void> getConfigs() {
-        logger.info("CONFIG = " + testConfig);
+//        logger.info("CONFIG = " + testConfig);
         return ResponseEntity.noContent().build();
     }
 
